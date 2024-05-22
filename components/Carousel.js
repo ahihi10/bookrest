@@ -32,6 +32,7 @@
 import React from 'react';
 import { View, Image } from 'react-native';
 
+
 const Carousel = () => {
   const images = [
     "https://posapp.vn/wp-content/uploads/2022/03/ma1-1024x682.jpg",
@@ -48,3 +49,4 @@ const Carousel = () => {
 };
 
 export default Carousel;
+

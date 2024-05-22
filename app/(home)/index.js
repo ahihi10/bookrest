@@ -19,7 +19,7 @@ import Restaurant from '../../components/Restaurant'
 const index = () => {
     const [locationServicesEnabled, setLocationServicesEnabled] = useState(false)
     const [displayCurrentAddress, setDisplayCurrentAddress] = useState("fetching your location...")
-
+    const [data,setData] = useState([])
     useEffect(() => {
         CheckIfLocationEnabled()
         GetCurrentLocation()
@@ -40,7 +40,7 @@ const index = () => {
 
     const GetCurrentLocation = async () => {
         let { status } = await Location.requestBackgroundPermissionsAsync()
-        if (status !== granted) {
+        if (status !== "granted") {
             Alert.alert(
                 "Permission not granted",
                 "Allow the app to use the location service",
@@ -84,42 +84,42 @@ const index = () => {
             type:"Vietnam"
         },
         {
-            id:0,
+            id:1,
+            name:"Hai Ba Trung 1",
+            image: "https://www.google.com/maps/vt/data=JtVR9s04wyIV-Leeww7xwrxbHdEdwq-mKjI4bXrEhfXKkTOOvsbQ9FnUc5C7B9_cPSOeiDLo53Q3gPlOTWuTb1cfzgU-jO-GTj_wmBc85m59IoLK5lQdY9ir0wtLnjhf0eKMvn0DpJfagXm6T9Tx4bwJ0lfDOJcePGUkZ0Du4XXKMC2jUm5JeyHZIhk4oNUgsCWecSqgfES2rMtm8WpMwIbsWDzoteUcyI7ijoXMPBsjL7vEU2mhurlaNtkkDKddhG4Dd7BDSBKQsxuQfAX68FAsnFJerhvO",
+            type:"Vietnam"
+        },
+        
+        {
+            id:2,
+            name:"Hai Ba Trung2",
+            image: "https://www.google.com/maps/vt/data=JtVR9s04wyIV-Leeww7xwrxbHdEdwq-mKjI4bXrEhfXKkTOOvsbQ9FnUc5C7B9_cPSOeiDLo53Q3gPlOTWuTb1cfzgU-jO-GTj_wmBc85m59IoLK5lQdY9ir0wtLnjhf0eKMvn0DpJfagXm6T9Tx4bwJ0lfDOJcePGUkZ0Du4XXKMC2jUm5JeyHZIhk4oNUgsCWecSqgfES2rMtm8WpMwIbsWDzoteUcyI7ijoXMPBsjL7vEU2mhurlaNtkkDKddhG4Dd7BDSBKQsxuQfAX68FAsnFJerhvO",
+            type:"Vietnam"
+        },
+        
+        {
+            id:3,
+            name:"Hai Ba Trung3",
+            image: "https://www.google.com/maps/vt/data=JtVR9s04wyIV-Leeww7xwrxbHdEdwq-mKjI4bXrEhfXKkTOOvsbQ9FnUc5C7B9_cPSOeiDLo53Q3gPlOTWuTb1cfzgU-jO-GTj_wmBc85m59IoLK5lQdY9ir0wtLnjhf0eKMvn0DpJfagXm6T9Tx4bwJ0lfDOJcePGUkZ0Du4XXKMC2jUm5JeyHZIhk4oNUgsCWecSqgfES2rMtm8WpMwIbsWDzoteUcyI7ijoXMPBsjL7vEU2mhurlaNtkkDKddhG4Dd7BDSBKQsxuQfAX68FAsnFJerhvO",
+            type:"Vietnam"
+        },
+        
+        {
+            id:4,
             name:"Hai Ba Trung",
             image: "https://www.google.com/maps/vt/data=JtVR9s04wyIV-Leeww7xwrxbHdEdwq-mKjI4bXrEhfXKkTOOvsbQ9FnUc5C7B9_cPSOeiDLo53Q3gPlOTWuTb1cfzgU-jO-GTj_wmBc85m59IoLK5lQdY9ir0wtLnjhf0eKMvn0DpJfagXm6T9Tx4bwJ0lfDOJcePGUkZ0Du4XXKMC2jUm5JeyHZIhk4oNUgsCWecSqgfES2rMtm8WpMwIbsWDzoteUcyI7ijoXMPBsjL7vEU2mhurlaNtkkDKddhG4Dd7BDSBKQsxuQfAX68FAsnFJerhvO",
             type:"Vietnam"
         },
         
         {
-            id:0,
+            id:5,
             name:"Hai Ba Trung",
             image: "https://www.google.com/maps/vt/data=JtVR9s04wyIV-Leeww7xwrxbHdEdwq-mKjI4bXrEhfXKkTOOvsbQ9FnUc5C7B9_cPSOeiDLo53Q3gPlOTWuTb1cfzgU-jO-GTj_wmBc85m59IoLK5lQdY9ir0wtLnjhf0eKMvn0DpJfagXm6T9Tx4bwJ0lfDOJcePGUkZ0Du4XXKMC2jUm5JeyHZIhk4oNUgsCWecSqgfES2rMtm8WpMwIbsWDzoteUcyI7ijoXMPBsjL7vEU2mhurlaNtkkDKddhG4Dd7BDSBKQsxuQfAX68FAsnFJerhvO",
             type:"Vietnam"
         },
         
         {
-            id:0,
-            name:"Hai Ba Trung",
-            image: "https://www.google.com/maps/vt/data=JtVR9s04wyIV-Leeww7xwrxbHdEdwq-mKjI4bXrEhfXKkTOOvsbQ9FnUc5C7B9_cPSOeiDLo53Q3gPlOTWuTb1cfzgU-jO-GTj_wmBc85m59IoLK5lQdY9ir0wtLnjhf0eKMvn0DpJfagXm6T9Tx4bwJ0lfDOJcePGUkZ0Du4XXKMC2jUm5JeyHZIhk4oNUgsCWecSqgfES2rMtm8WpMwIbsWDzoteUcyI7ijoXMPBsjL7vEU2mhurlaNtkkDKddhG4Dd7BDSBKQsxuQfAX68FAsnFJerhvO",
-            type:"Vietnam"
-        },
-        
-        {
-            id:0,
-            name:"Hai Ba Trung",
-            image: "https://www.google.com/maps/vt/data=JtVR9s04wyIV-Leeww7xwrxbHdEdwq-mKjI4bXrEhfXKkTOOvsbQ9FnUc5C7B9_cPSOeiDLo53Q3gPlOTWuTb1cfzgU-jO-GTj_wmBc85m59IoLK5lQdY9ir0wtLnjhf0eKMvn0DpJfagXm6T9Tx4bwJ0lfDOJcePGUkZ0Du4XXKMC2jUm5JeyHZIhk4oNUgsCWecSqgfES2rMtm8WpMwIbsWDzoteUcyI7ijoXMPBsjL7vEU2mhurlaNtkkDKddhG4Dd7BDSBKQsxuQfAX68FAsnFJerhvO",
-            type:"Vietnam"
-        },
-        
-        {
-            id:0,
-            name:"Hai Ba Trung",
-            image: "https://www.google.com/maps/vt/data=JtVR9s04wyIV-Leeww7xwrxbHdEdwq-mKjI4bXrEhfXKkTOOvsbQ9FnUc5C7B9_cPSOeiDLo53Q3gPlOTWuTb1cfzgU-jO-GTj_wmBc85m59IoLK5lQdY9ir0wtLnjhf0eKMvn0DpJfagXm6T9Tx4bwJ0lfDOJcePGUkZ0Du4XXKMC2jUm5JeyHZIhk4oNUgsCWecSqgfES2rMtm8WpMwIbsWDzoteUcyI7ijoXMPBsjL7vEU2mhurlaNtkkDKddhG4Dd7BDSBKQsxuQfAX68FAsnFJerhvO",
-            type:"Vietnam"
-        },
-        
-        {
-            id:0,
+            id:6,
             name:"Hai Ba Trung",
             image: "https://www.google.com/maps/vt/data=JtVR9s04wyIV-Leeww7xwrxbHdEdwq-mKjI4bXrEhfXKkTOOvsbQ9FnUc5C7B9_cPSOeiDLo53Q3gPlOTWuTb1cfzgU-jO-GTj_wmBc85m59IoLK5lQdY9ir0wtLnjhf0eKMvn0DpJfagXm6T9Tx4bwJ0lfDOJcePGUkZ0Du4XXKMC2jUm5JeyHZIhk4oNUgsCWecSqgfES2rMtm8WpMwIbsWDzoteUcyI7ijoXMPBsjL7vEU2mhurlaNtkkDKddhG4Dd7BDSBKQsxuQfAX68FAsnFJerhvO",
             type:"Vietnam"
@@ -165,7 +165,7 @@ const index = () => {
                 description: "D"
             },
             {
-                id:"0",
+                id:"1",
                 image: "D",
                 description: "D"
             },
@@ -184,7 +184,7 @@ const index = () => {
         },
         {
             id:"1",
-            featured_image:"",
+            featured_image:"D",
             name: "Qubitos - The Terrace Cafe",
             cuisines: "Thai, European, Mexican",
             average_cost_for_two: 1500,
